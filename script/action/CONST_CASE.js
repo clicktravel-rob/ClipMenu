@@ -1,0 +1,1 @@
+clipText.replace(" ","_").toUpperCase();
