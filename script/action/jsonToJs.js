@@ -1,6 +1,7 @@
 const jsToJson =
   (text = '') => text
-  .replace(/\"(\S*)\":/g, '$1:')
-  .replace(/"/g,'\'') // TODO handle escaped quotes in strings
+  .replace(/([^\\])\"([^"\\]+)\":/g, '$1$2:')
+  .replace(/([^\\])"/g,'$1\'')
+  .replace(/\\"/g, '"');
 
 return jsToJson(clipText);
